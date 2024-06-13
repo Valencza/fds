@@ -1,0 +1,2148 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<!-- Mirrored from bankhub-tailwind.vercel.app/transaction/style-01.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Apr 2024 10:14:19 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="../images/logo.png" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com/" />
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+  <link rel="stylesheet" href="../third-party/nice-select2.css" />
+  <link rel="stylesheet" href="../../cdn.jsdelivr.net/npm/jsvectormap/dist/css/jsvectormap.min.css" />
+  <link rel="stylesheet" href="../../cdn.jsdelivr.net/npm/simple-datatables%409.0.0/dist/style.min.css">
+  <link rel="stylesheet" href="../../unpkg.com/js-datepicker%405.18.2/dist/datepicker.min.css">
+  <link rel="stylesheet" href="../../cdn.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="../../cdn.quilljs.com/1.3.6/quill.snow.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" />
+  <link rel="stylesheet" href="../third-party/line-awesome/css/line-awesome.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <meta name="description" content="Bankhub - Html Tailwindcss Banking and Fintech Dashboard Template">
+  <title>Rules</title>
+</head>
+
+<body class="vertical bg-secondary1/5 dark:bg-bg3 hidden">
+  <!-- Loader -->
+  <div class="loader flex items-center justify-center min-w-screen min-h-screen fixed !z-50 inset-0 bg-n0 dark:bg-bg4">
+    <svg viewBox="25 25 50 50">
+      <circle r="20" cy="50" cx="50"></circle>
+    </svg>
+  </div>
+  <!-- Navigation -->
+  <section class="topbar-container z-30">
+    <nav
+    class="navbar-top topbarfull z-20 gap-3 bg-n0 py-3 shadow-sm duration-300 border-b border-n0 dark:border-n700 dark:bg-bg4 xl:py-4 xxxl:py-6"
+    id="topbar">
+    <div class="topbar-inner flex items-center justify-between">
+      <div class="flex grow items-center gap-4 xxl:gap-6">
+        <a href="style-01.html" class="topbar-logo hidden shrink-0">
+          <img width="174" height="38" src="../images/logo-with-text.png" alt="logo"
+            class="logo-full2 hidden lg:block" />
+        </a>
+        <button aria-label="sidebar-toggle-btn"
+          class="flex items-center rounded-s-2xl bg-primary px-0.5 py-3 text-xl text-n0" id="sidebar-toggle-btn">
+          <i class="las la-angle-left text-lg"></i>
+        </button>
+      </div>
+      <div class="flex items-center gap-3 sm:gap-4 xxl:gap-6">
+        <!-- mobile Search  -->
+        <div class="relative lg:hidden">
+          <button id="mobile-search-btn"
+            class="flex h-10 w-10 cursor-pointer select-none items-center justify-center gap-2 rounded-full border border-n30 bg-primary/5 dark:border-n500 dark:bg-bg3 md:h-12 md:w-12">
+            <i class="las la-search"></i>
+          </button>
+          <div id="mobile-search"
+            class="hide invisible absolute -left-8 top-full z-20 flex min-w-max max-w-[250px] origin-[20%_20%] gap-3 overflow-y-auto rounded-md bg-n0 p-3 opacity-0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg4">
+            <form
+              class="flex w-full items-center justify-between gap-3 rounded-[30px] border border-n30 bg-secondary1/5 p-1 focus-within:border-primary dark:border-n500 dark:bg-bg3 xxl:p-2">
+              <input type="text" placeholder="Search" class="w-full bg-transparent py-1 ltr:pl-4 rtl:pr-4" />
+              <button
+                class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-n0 lg:h-8 lg:w-8">
+                <i class="las la-search text-lg"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <!-- Notification -->
+        <div class="relative">
+          <button id="notification-btn"
+            class="relative h-10 w-10 rounded-full border border-n30 bg-primary/5 dark:border-n500 dark:bg-bg3 md:h-12 md:w-12">
+            <i class="las la-bell text-2xl"></i>
+            <span
+              class="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs text-n0">
+              2
+            </span>
+          </button>
+          <div id="notification"
+            class="hide absolute top-full z-20 origin-[60%_0] rounded-md bg-n0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg4 ltr:-right-[110px] sm:ltr:right-0 sm:ltr:origin-top-right rtl:-left-[120px] sm:rtl:left-0 sm:rtl:origin-top-left">
+            <div class="flex items-center justify-between border-b p-3 dark:border-n500 lg:px-4">
+              <h5 class="h5">Notifications</h5>
+              <a href="#" class="text-sm text-primary"> View All </a>
+            </div>
+            <ul class="flex w-[300px] flex-col p-4">
+              <div class="flex cursor-pointer gap-2 rounded-md p-2 duration-300 hover:bg-primary/10">
+                <img src="../images/user-3.png" width="44" height="40" class="shrink-0 rounded-full" alt="img" />
+                <div class="text-sm">
+                  <div class="flex gap-1">
+                    <span class="font-medium">Benjamin</span>
+                    <span>Sent a message</span>
+                  </div>
+                  <span class="text-xs text-n100 dark:text-n50">1 hour ago</span>  
+                </div>
+              </div>
+              <div class="flex cursor-pointer gap-2 rounded-md p-2 duration-300 hover:bg-primary/10">
+                <img src="../images/user-4.png" width="44" height="40" class="shrink-0 rounded-full" alt="img" />
+                <div class="text-sm">
+                  <div class="flex gap-1">
+                    <span class="font-medium">Benjamin</span>
+                    <span>Left a Comment</span>
+                  </div>
+                  <span class="text-xs text-n100 dark:text-n50">1 hour ago</span>
+                </div>
+              </div>
+              <div class="flex cursor-pointer gap-2 rounded-md p-2 duration-300 hover:bg-primary/10">
+                <img src="../images/user-5.png" width="44" height="40" class="shrink-0 rounded-full" alt="img" />
+                <div class="text-sm">
+                  <div class="flex gap-1">
+                    <span class="font-medium">Benjamin</span>
+                    <span>Sent a message</span>
+                  </div>
+                  <span class="text-xs text-n100 dark:text-n50">2 hour ago</span>
+                </div>
+              </div>
+              <div class="flex cursor-pointer gap-2 rounded-md p-2 duration-300 hover:bg-primary/10">
+                <img src="../images/user-7.png" width="44" height="40" class="shrink-0 rounded-full" alt="img" />
+                <div class="text-sm">
+                  <div class="flex gap-1">
+                    <span class="font-medium">Samuel</span>
+                    <span>Uploaded a file</span>
+                  </div>
+                  <span class="text-xs text-n100 dark:text-n50">Yesterday</span>
+                </div>
+              </div>
+              <div class="flex cursor-pointer gap-2 rounded-md p-2 duration-300 hover:bg-primary/10">
+                <img src="../images/user-7.png" width="44" height="40" class="shrink-0 rounded-full" alt="img" />
+                <div class="text-sm">
+                  <div class="flex gap-1">
+                    <span class="font-medium">David</span>
+                    <span>Left a Comment</span>
+                  </div>
+                  <span class="text-xs text-n100 dark:text-n50">Yesterday</span>
+                </div>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <!-- Profile dropdown -->
+        <div class="relative shrink-0">
+          <div id="profile-btn" class="w-10 cursor-pointer md:w-12">
+            <img src="../images/user-big-4.png" class="rounded-full" width="48" height="48" alt="profile img" />
+          </div>
+          <div id="profile"
+            class="hide absolute top-full z-20 rounded-md bg-n0 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg4 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+            <div class="flex flex-col items-center border-b p-3 text-center dark:border-n500 lg:p-4">
+              <img src="../images/user-big-4.png" width="60" height="60" class="rounded-full" alt="profile img" />
+              <h6 class="h6 mt-2">William James</h6>
+              <span class="text-sm">james@mail.com</span>
+            </div>
+            <ul class="flex w-[250px] flex-col p-4">
+              <li>
+                <a href="../profile/change-password.html"
+                  class="flex items-center gap-2 rounded-md p-2 duration-300 hover:bg-primary hover:text-n0">
+                  <span>
+                    <i class="las la-user mt-1 text-xl"></i>
+                  </span>
+                  Profile
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="flex items-center gap-2 rounded-md p-2 duration-300 hover:bg-primary hover:text-n0">
+                  <span>
+                    <i class="las la-envelope mt-1 text-xl"></i>
+                  </span>
+                  Messages
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="flex items-center gap-2 rounded-md p-2 duration-300 hover:bg-primary hover:text-n0">
+                  <span>
+                    <i class="las la-life-ring mt-1 text-xl"></i>
+                  </span>
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="../profile/change-password.html"
+                  class="flex items-center gap-2 rounded-md p-2 duration-300 hover:bg-primary hover:text-n0">
+                  <span>
+                    <i class="las la-cog mt-1 text-xl"></i>
+                  </span>
+                  Settings
+                </a>
+              </li>
+              <li>
+                <a href="../auth/sign-in.html"
+                  class="flex items-center gap-2 rounded-md p-2 duration-300 hover:bg-primary hover:text-n0">
+                  <span>
+                    <i class="las la-sign-out-alt mt-1 text-xl"></i>
+                  </span>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Vertical -->
+  <aside id="sidebar" class="sidebar bg-n0 dark:!bg-bg4">
+    <div class="sidebar-inner relative">
+      <div class="logo-column">
+        <div class="logo-container">
+          <div class="logo-inner">
+            <a href="style-01.html" class="logo-wrapper">
+              <img src="../images/logo-with-text.png" width="174" height="38" class="logo-full" alt="logo" />
+              <img src="../images/logo.png" width="37" height="36" class="logo-icon hidden" alt="logo" />
+            </a>
+            <img width="141" height="38" class="logo-text hidden" src="../images/logo-text.png" alt="logo text" />
+            <button class="sidebar-close-btn xl:hidden" id="sidebar-close-btn">
+              <i class="las la-times"></i>
+            </button>
+          </div>
+        </div>
+        <div class="menu-container pb-28">
+          <div class="menu-wrapper">
+            <ul class="menu-ul mt-6">
+              <!-- Dashboard -->
+              <li class="menu-li";">
+                <a href="../dashboards/index.html" class="menu-btn border-n30 bg-n0 dark:!border-n500 dark:bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-home"></i>
+                    </span>
+                    <span class="menu-title font-medium">Dashboard</span>
+                  </span>
+                </a>
+                <ul class="">
+                </ul>
+              </li>
+              <!-- Transaction -->
+              <li class="menu-li">
+                <a href="../transaction/index.html" class="menu-btn border-n30 bg-n0 dark:!border-n500 dark:bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-exchange-alt"></i>
+                    </span>
+                    <span class="menu-title font-medium">Transaction</span>
+                  </span>
+                </a>
+                <ul class="submenu-hide submenu">
+                </ul>
+              </li>
+              <!-- Configuration -->
+              <li class="menu-li">
+                <button class="menu-btn group bg-n0 dark:!border-n500 dark:!bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-cogs"></i>
+                    </span>
+                    <span class="menu-title font-medium">Configuration</span>
+                  </span>
+                  <span class="plus-minus">
+                    <i class="las la-plus text-xl"></i>
+                    <i class="las la-minus text-xl"></i>
+                  </span>
+                </button>
+                <ul class="submenu-hide submenu">
+                  <li>
+                    <a href="../configuration/parameters.html" class="submenu-link">
+                      <i class="las la-sliders-h"></i>
+                      <span>Parameter</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../configuration/rules.html" class="submenu-link">
+                      <i class="las la-list"></i>
+                      <span>Rules</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- Network Fraud -->
+              <li class="menu-li">
+                <a href="../network-fraud/index.html" class="menu-btn border-n30 bg-n0 dark:!border-n500 dark:bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-signal"></i>
+                    </span>
+                    <span class="menu-title font-medium">Network Fraud</span>
+                  </span>
+                </a>
+                <ul class="submenu-hide submenu">
+                </ul>
+              </li>
+              <!-- Change Password -->
+              <li class="menu-li">
+                <button class="menu-btn group bg-n0 dark:!border-n500 dark:!bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-cogs"></i>
+                    </span>
+                    <span class="menu-title font-medium">Setting</span>
+                  </span>
+                  <span class="plus-minus">
+                    <i class="las la-plus text-xl"></i>
+                    <i class="las la-minus text-xl"></i>
+                  </span>
+                </button>
+                <ul class="submenu-hide submenu">
+                  <li>
+                    <a href="../setting/change-password.html" class="submenu-link">
+                      <i class="las la-key"></i>
+                      <span>Change Password</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="../setting/user-management.html" class="submenu-link">
+                      <i class="las la-users"></i>
+                      <span>User Management</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              
+              <!-- Audit Trail -->
+              <li class="menu-li">
+                <a href="../audit-trail/index.html" class="menu-btn border-n30 bg-n0 dark:!border-n500 dark:bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-file-alt"></i>
+                    </span>
+                    <span class="menu-title font-medium">Audit Trail</span>
+                  </span>
+                </a>
+                <ul class="submenu-hide submenu">
+                </ul>
+              </li>
+              <!-- Logout -->
+              <li class="menu-li">
+                <a href="../auth/sign-in.html" class="menu-btn border-n30 bg-n0 dark:!border-n500 dark:bg-bg4">
+                  <span class="flex items-center justify-center gap-2">
+                    <span class="menu-icon">
+                      <i class="las la-sign-out-alt"></i>
+                    </span>
+                    <span class="menu-title font-medium">Logout</span>
+                  </span>
+                </a>
+                <ul class="submenu-hide submenu">
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  
+</section>
+  <!-- Main Content -->
+  <main class="main-content has-sidebar">
+    <div class="main-inner">
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4 lg:mb-8">
+  <h2 class="h2">Rules</h2>
+  <button class="btn ac-modal-btn">
+    <i class="las la-plus-circle text-base md:text-lg"></i>
+    New Rule
+  </button>
+</div>
+
+      <!-- Latest Transactions -->
+      <div class="box col-span-12 lg:col-span-6">
+        <div class="overflow-x-auto pb-4 lg:pb-6 mb-6">
+          <table class="w-full whitespace-nowrap select-all-table" id="transactionTable1">
+            <thead>
+              <tr class="bg-secondary1/5 dark:bg-bg3">
+                <th class="text-start !px-6 w-14 !py-5 min-w-[80px] cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Rule ID
+                  </div>
+                </th>
+                <th class="text-start !py-5 px-6 min-w-[100px] cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Rule Description
+                  </div>
+                </th>
+                <th class="text-start !py-5 min-w-[100px]cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Channel
+                  </div>
+                </th>
+                <th class="text-start !py-5 px-6 min-w-[100px] cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Status
+                  </div>
+                </th>
+                <th class="text-start !py-5 px-6 cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Creation Status
+                  </div>
+                </th>
+                <th class="text-start !py-5 min-w-[100px] cursor-pointer">
+                  <div class="flex items-center gap-1">
+                    Menu
+                  </div>
+                </th>
+                <th class="text-center p-5 ">Action</th>          
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR001
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Simultaneous Transaction</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary2/10 dark:bg-bg3 text-secondary2">
+                  Disabled
+                  </span>
+                </td>
+                                        
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-primary/10 dark:bg-bg3 text-primary">
+                  Ready
+                  </span>
+                </td>
+                           
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" id="approvalButton">
+      Approval
+    </button>
+  </li>
+  
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" id="deleteButton">
+      Delete
+    </button>
+  </li>  
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR002
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Account Balance Anomaly</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+                </td>
+                                           
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Checker Evaluation
+                  </span>
+                </td>                 
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR003a
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Spike in ATM transaction amount</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>               
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR003b
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Spike in ATM transaction frequency</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>                 
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR003c
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Spike in card transaction amount</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Approver Evaluation
+                </span>
+              </td>              
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR003d
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Spike in card transaction frequency</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Approver Evaluation
+                </span>
+              </td>           
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR004
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Outside Normal Hours</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>     
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR005
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Consecutively over limit</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Approver Evaluation
+                </span>
+              </td>       
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR007a
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Transaction from Watchlist card</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>          
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR007b
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Transaction from watchlist account </td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>              
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td> 
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR007c
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Transaction from blacklist card</td>
+                <td class="py-2">
+                    <div>
+                      <p class="font-medium">ATM</p>
+                    </div>
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>         
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR009
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Transaction from/to Terrorist</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>        
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR012
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">IB/MB regristration for elderly citizens</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR013a
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Change no.hp and register IBMB</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td>  
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td> 
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR013b
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">change email and register IBMB</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>  
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td>
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR017
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Withdrawl same account to different Teller within one day</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                  Evaluation Only
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Maker Evaluation
+                </span>
+              </td>   
+                <td class="py-2 px-4">
+                    <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span>
+                </td>
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>   
+              </tr>
+
+              <tr class="even:bg-secondary1/5 dark:even:bg-bg3">
+                <td class="text-start !px-6">
+                  <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #a1a1a1;">
+                        FR_TEMPLATE
+                    </span>
+                </td>                   
+                <td class="py-2 px-6">Rule Template</td>
+                <td class="py-2">
+                    <!-- <div>
+                      <p class="font-medium">ATM MB</p>
+                      <p class="font-medium">IB</p>
+                    </div> -->
+                </td>                
+                <td class="py-2 px-6">
+                  <span
+                  class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary2/10 dark:bg-bg3 text-secondary2">
+                  Disabled
+                  </span>
+              </td> 
+              <td class="py-2 px-6">
+                <span
+                class="block text-xs w-28 xxl:w-36 text-center rounded-[30px] dark:border-n500 border border-n30 py-2 bg-secondary3/10 dark:bg-bg3 text-secondary3">
+                Checker Evaluation
+                </span>
+              </td>  
+                <td class="py-2 px-4">
+                    <!-- <span class="block text-xs w-28 xxl:w-36 text-center font-medium rounded dark:border-n500 border border-danger py-2 text-black" style="border-color: #000;">
+                        <select class="form-select">
+                            <option value="" disabled selected>Select menu</option>
+                            <option value="enable">Enable</option>
+                            <option value="disable">Disable</option>
+                            <option value="evaluation_only">Evaluation Only</option>
+                        </select>
+                    </span> -->
+                </td> 
+                <td class="py-2">
+                  <div class="flex justify-center">
+                    <div class="relative">
+  <i class="las la-ellipsis-v horiz-option-btn cursor-pointer"></i>
+  <ul
+  class="horiz-option hide absolute top-full z-[3] min-w-[122px] rounded-md bg-n0 p-3 shadow-[0px_6px_30px_0px_rgba(0,0,0,0.08)] duration-300 dark:bg-bg3 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left">
+  <li>
+    <button
+      class="btn ac-modal-btn1 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4 mb-3" data-bs-toggle="modal" data-bs-target="#resetModal">
+      Approval
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn3 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Edit
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn shrink-0 total-deposit-btn block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Set Channel
+    </button>
+  </li>
+  <li>
+    <button
+     class="btn shrink-0 total-deposit-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Test Rule
+    </button>
+  </li>
+  <li>
+    <button
+      class="btn ac-modal-btn2 block mb-2 w-full text-start cursor-pointer rounded px-3 py-1 text-sm leading-normal duration-300 hover:bg-primary/10 dark:hover:bg-bg4" data-bs-toggle="modal" data-bs-target="#deleteModal">
+      Delete
+    </button>
+  </li>
+</ul>
+</div>
+                  </div>
+                </td>  
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+        <div class="flex col-span-12 gap-4 sm:justify-between justify-center items-center flex-wrap">
+    <p>
+        Showing 1 to 8 of 18 entries
+    </p>
+
+    <ul class="flex gap-2 md:gap-3 flex-wrap md:font-semibold items-center">
+        <li>
+            <button
+                class="hover:bg-primary text-primary rtl:rotate-180 hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary">
+                <i class="las la-angle-left text-lg"></i>
+            </button>
+        </li>
+        <li>
+            <button
+                class="hover:bg-primary text-n0 bg-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary">
+                1
+            </button>
+        </li>
+        <li>
+            <button
+                class="hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary">
+                2
+            </button>
+        </li>
+        <li>
+            <button
+                class="hover:bg-primary text-primary hover:text-n0 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary">
+                3
+            </button>
+        </li>
+        <li>
+            <button
+                class="hover:bg-primary text-primary hover:text-n0 rtl:rotate-180 border md:w-10 duration-300 md:h-10 w-8 h-8 flex items-center rounded-full justify-center border-primary">
+                <i class="las la-angle-right text-lg"></i>
+            </button>
+        </li>
+    </ul>
+</div>
+      </div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div class="ac-modal-overlay fixed inset-0 z-[99] modalhide overflow-y-auto bg-n900/80 duration-500">
+  <div class="overflow-y-auto">
+    <div
+      class="modal box modal-inner absolute left-1/2 my-10 max-h-[90vh] w-[95%] max-w-[710px] duration-300 -translate-x-1/2 overflow-y-auto xl:p-8">
+      <!-- { "translate-y-0 scale-100 opacity-100 my-10": open } -->
+      <div class="relative">
+        <button class="ac-modal-close-btn absolute top-0 ltr:right-0 rtl:left-0">
+          <i class="las la-times"></i>
+        </button>
+        <div class="bb-dashed mb-4 flex items-center justify-between pb-4 lg:mb-6 lg:pb-6">
+          <h4 class="h4">New Rule</h4>
+        </div>
+        <form id="newRule">
+          <!-- <p class="mb-4 text-lg font-medium">Profile Photo</p> -->
+          <!-- <div class="mb-6 flex flex-wrap items-center gap-5 xl:gap-10">
+            <img src="../images/placeholder.png" class="h-20 w-20 lg:h-auto lg:w-auto" alt="placeholder" />
+            <div class="flex gap-4">
+              <input type="file" name="photo" id="photo" class="hidden" />
+              <label for="photo" class="btn"> Upload Photo </label>
+              <button class="btn-outline">Cancel</button>
+            </div>
+          </div>
+          <div class="mt-6 grid grid-cols-2 gap-4 xl:mt-8 xxxl:gap-6">
+            <div class="col-span-2">
+              <label for="name" class="mb-4 block font-medium md:text-lg">
+                Account Holder Name
+              </label>
+              <input type="text"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                placeholder="Enter Name" id="name" required />
+            </div>
+            <div class="col-span-2">
+              <label for="number" class="mb-4 block font-medium md:text-lg">
+                Phone Number
+              </label>
+              <input type="number"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                placeholder="Enter Number" id="number" required />
+            </div>
+            <div class="col-span-2">
+              <label for="currency" class="mb-4 block font-medium md:text-lg">
+                Select Currency
+              </label>
+              <select name="currency" class="nc-select full dark:!border-n500">
+                <option value="usd">USD</option>
+                <option value="gbp">GBP</option>
+                <option value="yen">YEN</option>
+                <option value="jpn">JPN</option>
+              </select>
+            </div>
+            <div class="col-span-2 md:col-span-1">
+              <label for="rate" class="mb-4 block font-medium md:text-lg">
+                Interest Rate
+              </label>
+              <input type="number"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                placeholder="Interest Rate %" id="rate" required />
+            </div>
+            <div class="col-span-2 md:col-span-1">
+              <label for="expire" class="mb-4 block font-medium md:text-lg">
+                Expiry Date
+              </label>
+              <div class="relative bg-secondary1/5 py-3 dark:bg-bg3 border border-n30 dark:border-n500 rounded-3xl">
+                <input id="date" class="border-none" placeholder="Select Date" autocomplete="off" />
+                <i class="las la-calendar absolute ltr:right-4 rtl:left-4 top-1/2 -translate-y-1/2 cursor-pointer"></i>
+              </div>
+            </div>
+            <div class="col-span-2">
+              <label for="amount" class="mb-4 block font-medium md:text-lg">
+                Amount
+              </label>
+              <input type="number"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                placeholder="Enter Amount" id="amount" required />
+            </div>
+            <div class="col-span-2">
+              <label for="status" class="mb-4 block font-medium md:text-lg">
+                Select Status
+              </label>
+              <select name="currency" class="nc-select full dark:!border-n500">
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div> -->
+            <div class="col-span-2 flex gap-4 md:gap-6 mt-2">
+              <button class="btn" type="submit" id="saveBtn">
+                Save
+              </button>
+              <button class="btn ml-auto" type="submit" id="cancelBtn">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<form id="approvalRule">
+  <button class="btn" type="button" id="saveBtnApproval">Save</button>
+  <button class="btn ml-auto" type="button" id="cancelBtnApproval">Cancel</button>
+</form>
+
+<form id="deleteRule">
+  <!-- These buttons are within the form and can be used for other form-related actions if necessary -->
+  <button class="btn" type="button" id="saveBtnDelete">Save</button>
+  <button class="btn ml-auto" type="button" id="cancelBtnDelete">Cancel</button>
+</form>
+
+<div class="ac-modal-overlay3 fixed inset-0 z-[99] modalhide overflow-y-auto bg-n900/80 duration-500">
+  <div class="overflow-y-auto">
+    <div
+      class="modal box modal-inner absolute left-1/2 my-10 max-h-[90vh] w-[95%] max-w-[710px] duration-300 -translate-x-1/2 overflow-y-auto xl:p-8">
+      <!-- { "translate-y-0 scale-100 opacity-100 my-10": open } -->
+      <div class="relative">
+        <button class="ac-modal-close-btn3 absolute top-0 ltr:right-0 rtl:left-0">
+          <i class="las la-times"></i>
+        </button>
+        <div class="bb-dashed mb-4 flex items-center justify-between pb-4 lg:mb-6 lg:pb-6">
+          <h4 class="h4">Rule Designer [EDIT]</h4>
+        </div>
+        <form id="editRule">
+          <div v class="mt-6 grid grid-cols-2 gap-4 xl:mt-8 xxxl:gap-6">
+            <!-- <div class="col-span-2">
+              <label for="username" class="mb-4 block font-medium md:text-lg bb-dashed mb-4 pb-4 lg:mb-6">
+                Are You Sure Your Want To Approve This Rule ?
+              </label>
+            </div> -->
+            <div class="col-span-2 flex gap-4 md:gap-6 mt-2">
+              <button class="btn" type="submit" id="saveBtn">
+                Save
+              </button>
+              <button class="btn ml-auto" type="submit" id="cancelBtn">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-two-overlay fixed inset-0 z-[99] modalhide overflow-y-auto bg-n900/80 duration-500">
+  <div class="overflow-y-auto">
+    <div class="modal box modal-inner absolute left-1/2 my-10 max-h-[90vh] w-[95%] max-w-[400px] -translate-x-1/2 overflow-y-auto duration-300 xl:p-8">
+      <!-- { "translate-y-0 scale-100 opacity-100 my-10": open } -->
+      <div class="relative">
+        <button class="modal-two-close-btn absolute top-0 ltr:right-0 rtl:left-0">
+          <i class="las la-times"></i>
+        </button>
+        <div class="bb-dashed mb-4 flex items-center justify-between pb-4 lg:mb-6 lg:pb-6">
+          <h4 class="h4">Set Channel For [Id Rule]</h4>
+        </div>
+        <form id="setChannelRule">
+          <div class="mt-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 xl:mt-8 xxxl:gap-6">
+              <div>
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center">
+                    <input type="checkbox" id="atm" name="channel" value="ATM">
+                    <label for="atm" class="ml-2">ATM</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="checkbox" id="mb" name="channel" value="MB">
+                    <label for="mb" class="ml-2">MB</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="checkbox" id="ib" name="channel" value="IB">
+                    <label for="ib" class="ml-2">IB</label>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="flex flex-col gap-4">
+                  <div class="flex items-center">
+                    <input type="checkbox" id="atmb_alto" name="channel" value="ATMB ALTO">
+                    <label for="atmb_alto" class="ml-2">ATMB ALTO</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="checkbox" id="teller" name="channel" value="TELLER">
+                    <label for="teller" class="ml-2">TELLER</label>
+                  </div>
+                  <div class="flex items-center">
+                    <input type="checkbox" id="esb" name="channel" value="ESB">
+                    <label for="esb" class="ml-2">ESB</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="flex gap-4 md:gap-6 mt-2">
+              <button class="btn" type="submit">Save</button>
+              <button class="btn ml-auto" type="submit">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal-two-overlay2 fixed inset-0 z-[99] modalhide overflow-y-auto bg-n900/80 duration-500">
+  <div class="overflow-y-auto">
+    <div
+      class="modal box modal-inner absolute left-1/2 my-10 max-h-[90vh] w-[95%] max-w-[710px] -translate-x-1/2 overflow-y-auto duration-300 xl:p-8">
+      <!-- { "translate-y-0 scale-100 opacity-100 my-10": open } -->
+      <div class="relative">
+        <button class="modal-two-close-btn2 absolute top-0 ltr:right-0 rtl:left-0">
+          <i class="las la-times"></i>
+        </button>
+        <div class="bb-dashed mb-4 flex items-center justify-between pb-4 lg:mb-6 lg:pb-6">
+          <h4 class="h4">Test Rule [Id Rule]</h4>
+        </div>
+        <form id="testRule">
+          <div class="mt-6 grid grid-cols-2 gap-4 xl:mt-8 xxxl:gap-6">
+            <div class="col-span-2">
+              <label for="threeshold_atm_minimum_travel_duration" class="mb-4 block font-medium md:text-lg">
+                Threeshold Atm Minimum Travel Duration
+              </label>
+              <input type="text"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                 id="threeshold_atm_minimum_travel_duration" name="threeshold_atm_minimum_travel_duration" value="11" required readonly/>
+            </div>
+            <div class="col-span-2">
+              <label for="threeshold_distance_with_last_transaction" class="mb-4 block font-medium md:text-lg">
+                Threeshold Distance With Last Transaction
+              </label>
+              <input type="text"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                 id="threeshold_distance_with_last_transaction" name="threeshold_distance_with_last_transaction" required/>
+            </div>
+            <div class="col-span-2">
+              <label for="threeshold_interval_with_last_transaction" class="mb-4 block font-medium md:text-lg">
+                Threeshold Interval With Last Transaction
+              </label>
+              <input type="text"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                 id="threeshold_interval_with_last_transaction" name="threeshold_interval_with_last_transaction" required/>
+            </div>  
+            <div class="col-span-2">
+              <label for="evaluation_result" class="mb-4 block font-medium md:text-lg">
+                Evaluation Result
+              </label>
+              <textarea type="text"
+                class="w-full rounded-3xl border border-n30 bg-secondary1/5 px-6 py-2.5 dark:border-n500 dark:bg-bg3 md:py-3"
+                 id="evaluation_result" name="evaluation_result" placeholder="Evaluation result will be shown here" required> </textarea>
+            </div>
+            <div class="col-span-2 flex gap-4 md:gap-6 mt-2">
+              <button class="btn" type="submit">
+                Evaluate
+              </button>
+              <button class="btn ml-auto" type="submit">
+                Cancel
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- Theme Customizer  -->
+  <div id="customizer-container" class="z-[60] w-full"></div>
+  <script src="../js/apexcharts.min.js"></script>
+  <script src="../third-party/nice-select2.js"></script>
+
+  <script src="https://unpkg.com/js-datepicker"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/charts.js"></script>
+
+  <script>
+    document.getElementById('newRule').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.querySelector('.ac-modal-overlay').classList.add('modalhide');
+      swal("New Rule Success!", "", "success");
+    });
+
+    document.querySelector('.ac-modal-close-btn').addEventListener('click', function() {
+      document.querySelector('.ac-modal-overlay').classList.add('modalhide');
+    });
+
+    document.getElementById('cancelBtn').addEventListener('click', function() {
+      document.querySelector('.ac-modal-overlay').classList.add('modalhide');
+    });
+  </script>
+
+<script>
+  document.getElementById('approvalButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    swal({
+      title: "Confirm Approve Rule",
+      text: "Are you sure you want to approve this rule?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willApprove) => {
+      if (willApprove) {
+        swal("Approved!", "The rule has been approved.", "success")
+          .then(() => {
+            document.getElementById('approvalRule').submit();
+          });
+      } else {
+        swal("Cancelled", "The rule was not approved.", "error");
+      }
+    });
+  });
+
+  document.getElementById('cancelBtnApproval').addEventListener('click', function(event) {
+    event.preventDefault();
+    swal("Cancelled", "You cancelled the approval process.", "error");
+  });
+</script>
+
+<script>
+  document.getElementById('deleteButton').addEventListener('click', function(event) {
+    event.preventDefault();
+    swal({
+      title: "Confirm Rule Deletion",
+      text: "Are you sure you want to delete this rule?",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        swal("Deleted!", "The rule has been deleted.", "success")
+          .then(() => {
+            document.getElementById('deleteRule').submit();
+          });
+      } else {
+        swal("Cancelled", "The rule was not deleted.", "error");
+      }
+    });
+  });
+
+  document.getElementById('cancelBtnDelete').addEventListener('click', function(event) {
+    event.preventDefault();
+    swal("Cancelled", "You cancelled the deletion process.", "error");
+  });
+</script>
+
+<script>
+  document.getElementById('editRule').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.querySelector('.ac-modal-overlay3').classList.add('modalhide');
+    swal("Edit Rule Success!", "", "success");
+  });
+
+  document.querySelector('.ac-modal-close-btn3').addEventListener('click', function() {
+    document.querySelector('.ac-modal-overlay3').classList.add('modalhide');
+  });
+
+  document.getElementById('cancelBtn').addEventListener('click', function() {
+    document.querySelector('.ac-modal-overlay3').classList.add('modalhide');
+  });
+</script>
+
+  <script>
+    document.getElementById('setChannelRule').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.querySelector('.modal-two-overlay').classList.add('modalhide');
+      swal("Set Channel Rule Succeess!", "", "success");
+    });
+
+    document.querySelector('.modal-two-close-btn').addEventListener('click', function() {
+      document.querySelector('.modal-two-overlay').classList.add('modalhide');
+    });
+
+    document.getElementById('modal-two-close-btn').addEventListener('click', function() {
+      document.querySelector('.modal-two-overlay').classList.add('modalhide');
+    });
+  </script>
+
+<script>
+  document.getElementById('testRule').addEventListener('submit', function(e) {
+    e.preventDefault();
+    document.querySelector('.modal-two-overlay2').classList.add('modalhide');
+    swal("Test Rule Succeess!", "", "success");
+  });
+
+  document.querySelector('.modal-two-close-btn2').addEventListener('click', function() {
+    document.querySelector('.modal-two-overlay2').classList.add('modalhide');
+  });
+
+  document.getElementById('modal-two-close-btn2').addEventListener('click', function() {
+    document.querySelector('.modal-two-overlay2').classList.add('modalhide');
+  });
+</script>
+
+</body>
+
+
+<!-- Mirrored from bankhub-tailwind.vercel.app/transaction/style-01.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 24 Apr 2024 10:14:28 GMT -->
+</html>
